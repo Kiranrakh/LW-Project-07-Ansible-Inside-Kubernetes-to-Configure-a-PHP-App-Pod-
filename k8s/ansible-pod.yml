@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ansible
+spec:
+  containers:
+    - name: ansible
+      image: ansible-in-k8s
+      imagePullPolicy: Never
+      command: [ "sleep", "infinity" ]
+      securityContext:
+        privileged: true
