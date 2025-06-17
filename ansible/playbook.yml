@@ -1,0 +1,14 @@
+---
+- name: Configure PHP App via Ansible
+  hosts: all
+  become: false
+  tasks:
+
+    - name: Ping the PHP pod
+      ping:
+
+    - name: Copy profile.php to Apache root
+      copy:
+        src: files/profile.php
+        dest: /var/www/html/profile.php
+        mode: '0644'
