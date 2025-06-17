@@ -1,0 +1,13 @@
+kind: Pod
+metadata:
+  name: php-app
+  labels:
+    app: web
+spec:
+  containers:
+    - name: php
+      image: php-app-with-ssh
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 80
+        - containerPort: 22
